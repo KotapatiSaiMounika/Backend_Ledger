@@ -9,6 +9,10 @@ const app = express()
 app.use(cookieParser())
 
 app.use(express.json())
+
+app.get("/", (req, res) => {
+    res.send("Backend Ledger API is running ");
+});
 app.use("/api/auth", authRouter)
 app.use("/api/accounts", accountRouter)
 app.use("/api/transactions", transactionRoutes)
